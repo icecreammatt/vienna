@@ -42,6 +42,10 @@
   {{ with .Site.Params.keybase }}
   <a href="https://keybase.io/{{ . }}" target="_blank">
     <i class="fa fa-key"></i>
+  {{ end }}
+  {{ with .Site.Params.Resume }}
+  <a href="{{ .Site.Params.Resume }}">
+    <i class="fa fa-file-o"></i>
   </a>
   {{ end }}
 </div>
