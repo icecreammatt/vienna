@@ -1,3 +1,52 @@
+/*********/
+a {
+    text-decoration: underline;
+}
+
+.previous a, .next a {
+    text-decoration: none;
+}
+
+a, .text-primary {
+    color: #764E3C;
+}
+
+a:hover {
+    color: #7D776B;
+    text-decoration: underline;
+}
+
+/*** Works on common browsers ***/
+::selection {
+    background-color: #979997;
+    color: #fff;
+}
+ 
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: #979997;
+    color: #fff;
+}
+ 
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: #979997;
+    color: #fff;
+}
+ 
+::-ms-selection {
+    background-color: #979997;
+    color: #fff;
+}
+ 
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: #979997;
+    color: #fff;
+}
+
+
+/*********/
 main {
     max-width: 750px;
     word-wrap: break-word;
