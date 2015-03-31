@@ -35,12 +35,12 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     {{ end }}
     <section class="author-info row">
-      <div class="author-avatar col-md-2">
+      <div class="author-avatar col-md-2 col-sm-2 col-xs-12">
         {{ with .Site.Params.avatar }}
         <img alt="Author Avatar" src="{{ . }}" />
         {{ end }}
       </div>
-      <div class="author-meta col-md-6">
+      <div class="author-meta col-md-10 col-sm-10 col-xs-12">
         {{ with .Site.Params.author }}
         <h1 class="author-name text-primary">{{ . }}</h1>
         {{ end }}
