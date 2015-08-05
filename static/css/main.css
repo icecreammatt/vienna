@@ -337,3 +337,6 @@ article section img {
     margin: 13px auto;
 }
 
+.top-buffer {
+    margin-top:20px;
+}
