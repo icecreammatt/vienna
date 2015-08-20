@@ -2,21 +2,28 @@
 <aside>
     <div class="row top-buffer">
 
-        <div class="col-xs-12 col-sm-8 col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Recent Posts</h2>
-                </div>
-                <div class="list-group">
-                    {{range first 6 .Site.Pages}}
-                      {{ if ne .Title "Matt Carrier - Resume" }}
-                        <a href="{{.RelPermalink}}" class="list-group-item">{{ .Title }}</a>
-                      {{ end }} 
-                    {{ end }}
-                </div>
-            </div>
-        </div>
+      {{ if .Site.Params.RecentPosts }}
+        {{ if and (.Site.Params.RecentPosts) (.Site.Params.Tags) }}
+          <div class="col-xs-12 col-sm-8 col-md-8">
+        {{ else }}
+          <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ end }}
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h2 class="panel-title">Recent Posts</h2>
+                  </div>
+                  <div class="list-group">
+                      {{range first .Site.Params.RecentPostDisplayCount .Site.Pages}}
+                        {{ if ne .Title "Matt Carrier - Resume" }}
+                          <a href="{{.RelPermalink}}" class="list-group-item">{{ .Title }}</a>
+                        {{ end }} 
+                      {{ end }}
+                  </div>
+              </div>
+          </div>
+      {{ end }}
 
+      {{ if .Site.Params.Tags }}
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -33,6 +40,7 @@
                 </div>
             </div>
         </div>
+      {{ end }}
 
     </div>
 </aside>
