@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
+  <meta property="og:title" content="{{ if ne .Permalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
   {{ with .Site.Params.themecolor }}
   <meta name="theme-color" content="{{ . }}" />
  {{ end }}
@@ -26,7 +26,7 @@
   {{ end }}
 
   <title>
-    {{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+    {{ if ne .Permalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
   </title>
 
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css" />
@@ -55,9 +55,6 @@
   <meta name="msapplication-config" content="/icon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  {{ if eq .URL "/" }}
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  {{ end }}
 </head>
 <body>
     <header class="global-header"  style="background-image:url({{ if isset .Params "image" }}{{ .Params.image }} {{ else }} /images/bg.jpg {{ end }})">
@@ -69,16 +66,10 @@
       </div>
       {{ end }}
       {{ partial "link.html" . }}
-      {{ if ne .URL "/" }}
+      {{ if ne .Permalink "/" }}
       <a href="{{ .Site.BaseURL }}" class="btn-header btn-back hidden-xs">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
-      </a>
-      {{ end }}
-      {{ with .RSSLink }}
-      <a href="{{ . }}" class="btn-header btn-subscribe hidden-xs">
-        <i class="fa fa-rss" aria-hidden="true"></i>
-        &nbsp;Subscribe
       </a>
       {{ end }}
     </section>
