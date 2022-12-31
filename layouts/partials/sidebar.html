@@ -13,11 +13,11 @@
                       <h2 class="panel-title">Recent Posts</h2>
                   </div>
                   <div class="list-group">
-                      {{range first .Site.Params.RecentPostDisplayCount .Site.Pages}}
+                      {{range first .Site.Params.RecentPostDisplayCount .Site.RegularPages }}
                         {{ if ne .Title "Matt Carrier - Resume" }}
                           <a href="{{.RelPermalink}}" class="list-group-item">{{ .Title }}</a>
                         {{ end }} 
-                      {{ end }}
+                      {{ end }} 
                   </div>
               </div>
           </div>
