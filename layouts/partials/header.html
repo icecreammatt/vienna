@@ -66,12 +66,6 @@
       </div>
       {{ end }}
       {{ partial "link.html" . }}
-      {{ if ne .Permalink "/" }}
-      <a href="{{ .Site.BaseURL }}" class="btn-header btn-back hidden-xs">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
-        &nbsp;Home
-      </a>
-      {{ end }}
     </section>
   </header>
   <main class="container">
